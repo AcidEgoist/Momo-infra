@@ -1,0 +1,14 @@
+#cloud-init
+
+ssh_pwauth: false
+
+users:
+  - default
+  - name: ansible
+    gecos: Ansible User
+    groups: users, admin, wheel
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: true
+    ssh_authorized_keys:
+      - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBE8oP+Wki4/w2Th60XisEqccKE0Xa79M9xmd3p+GASQaJjYBJwtDx8qwSYMrRc2R426cbhsQg0/Ijjtbnxa/Vv4= egoist@fedora
